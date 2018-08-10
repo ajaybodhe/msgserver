@@ -1,3 +1,5 @@
+#ifndef _SEND_MESSAGE_H_
+#define _SEND_MESSAGE_H_
 #include <unistd.h> /* read, write, close */
 #include <string.h> /* memcpy, memset */
 #include <sys/socket.h> /* socket, connect */
@@ -9,3 +11,4 @@
     Sends message to upstream server and notes down the response
 */
 int sendMessage(char *serverAddr, int serverPort, char *message);
+#endif

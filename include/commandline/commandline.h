@@ -1,3 +1,5 @@
+#ifndef _COMMANDLINE_H_
+#define _COMMANDLINE_H_
 #include <stdio.h> /* printf*/
 #include <stdlib.h> /* exit */
 #include <popt.h> /* command ine read */
@@ -15,3 +17,4 @@
     m = message to be sent
 */
 void readCommandLine(int argc, char *argv[], char **serverAddr, int *serverPort, char**message) ;
+#endif

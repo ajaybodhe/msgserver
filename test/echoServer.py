@@ -7,22 +7,11 @@ def listen():
     connection.listen(10)
     while True:
         current_connection, address = connection.accept()
-        while True:
-            data = current_connection.recv(2048)
-
-            if data == 'quit\r\n':
-                current_connection.shutdown(1)
-                current_connection.close()
-                break
-
-            elif data == 'stop\r\n':
-                current_connection.shutdown(1)
-                current_connection.close()
-                exit()
-
-            elif data:
-                current_connection.send(data)
-
+        data = current_connection.recv(2048)
+        if data:
+            print data
+            ## just in case u need echo
+            # current_connection.send(data)
 
 if __name__ == "__main__":
     try:

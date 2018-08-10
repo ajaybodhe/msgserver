@@ -1,6 +1,6 @@
 
-#include "commandline/commandLine.h"
-#include "message/sendMessage.h"
+#include "commandline/commandline.h"
+#include "sendmessage/sendmessage.h"
 
 int main(int argc, char *argv[]) 
 {
