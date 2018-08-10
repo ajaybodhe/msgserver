@@ -1,12 +1,22 @@
 # msgserver
 C code to send messages to upstream servers
 
-#compile code
+# compile code
+
+Install Dependancy:
+
+For Ubuntu: sudo apt-get install  libpopt-dev
+
 make clean
+
 make
 
-#test code
+# test code
+
 cd test
+
 python server.py
+
 cd ..
-sendmsg -s 127.0.0.1 -p 5555 -m "hello server"
+
+./sendmsg -s 127.0.0.1 -p 5555 -m "hello server"
