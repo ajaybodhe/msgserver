@@ -12,7 +12,7 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = sendmessage.o commandline.o utils.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-server: $(OBJ)
+sendmessage: $(OBJ)
 	$(CC) server.c -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
