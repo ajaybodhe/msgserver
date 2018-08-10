@@ -9,7 +9,7 @@ For Ubuntu: sudo apt-get install  libpopt-dev
 
 make clean
 
-make
+make all
 
 # test code
 
