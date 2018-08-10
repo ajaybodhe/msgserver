@@ -4,18 +4,16 @@ CFLAGS=-I$(IDIR)
 
 ODIR=../obj
 
-LIBS=-lpopt
-
-_DEPS = commandline/commandline.h
+_DEPS = utils/utils.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = commandline.o 
+_OBJ = utils.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c $< -o $@ $(CFLAGS)
 
-commandline: $(OBJ)
+utils: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean

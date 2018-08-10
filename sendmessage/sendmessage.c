@@ -1,4 +1,4 @@
-#include "message/sendmessage.h"
+#include "sendmessage/sendmessage.h"
 
 /*
     Sends message to upstream server and notes down the response

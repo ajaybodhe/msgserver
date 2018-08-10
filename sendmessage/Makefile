@@ -4,18 +4,16 @@ CFLAGS=-I$(IDIR)
 
 ODIR=../obj
 
-LIBS=-lpopt
-
-_DEPS = commandline/commandline.h
+_DEPS = sendmessage/sendmessage.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = commandline.o 
+_OBJ = sendmessage.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c $< -o $@ $(CFLAGS)
 
-commandline: $(OBJ)
+sendmessage: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean

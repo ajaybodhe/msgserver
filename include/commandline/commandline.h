@@ -1,7 +1,7 @@
 #include <stdio.h> /* printf*/
 #include <stdlib.h> /* exit */
 #include <popt.h> /* command ine read */
-#include "utils.h"
+#include "utils/utils.h"
 
 #define SERVER_ADDRESS 's'
 #define SERVER_PORT 'p'
