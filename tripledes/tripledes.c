@@ -1,18 +1,16 @@
 #include "tripledes/tripledes.h"
 
-DES_cblock TripleDesKey1 =  { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
-DES_cblock TripleDesKey2 = { 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p' };
-DES_cblock TripleDesKey3 = { 'q', 'r', 's', 't', 'u', 'v', 'w', 'x' };
+DES_cblock TripleDesKey1 =  { 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68 };
+DES_cblock TripleDesKey2 = { 0x69, 0x6A, 0x6B, 0x6C, 0x6D, 0x6E, 0x6F, 0x70 };
+DES_cblock TripleDesKey3 = { 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, 0x78 };
 
 DES_key_schedule SchKey1,SchKey2,SchKey3;
 
 void initDes() 
 {
-	/* Check for Weak key generation */
-	if ( -2 == (DES_set_key_checked(&TripleDesKey1, &SchKey1) || DES_set_key_checked(&TripleDesKey2, &SchKey2) || DES_set_key_checked(&TripleDesKey3, &SchKey3)))
-	{
-		printf(" Weak key ....\n");
-	}
+	DES_set_key_checked(&TripleDesKey1, &SchKey1);
+	DES_set_key_checked(&TripleDesKey2, &SchKey2);
+	DES_set_key_checked(&TripleDesKey3, &SchKey3);
 }
 
 /*
@@ -24,7 +22,7 @@ unsigned char *encryptTripleDes(unsigned char *input_data)
 	
 	/* Init vector */
 	DES_cblock iv = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-	DES_set_odd_parity(&iv);
+	//DES_set_odd_parity(&iv);
 
     /* Buffers for Encryption */
 	unsigned char* cipher = (unsigned char*) calloc(input_data_len*3, sizeof(char));
@@ -44,7 +42,7 @@ unsigned char *decryptTripleDes(unsigned char *input_data)
 
     /* Init vector */
 	DES_cblock iv = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-	DES_set_odd_parity(&iv);
+	//DES_set_odd_parity(&iv);
 
     /* Buffers for Decryption */
 	unsigned char* text = (unsigned char*) calloc(input_data_len, sizeof(char));
