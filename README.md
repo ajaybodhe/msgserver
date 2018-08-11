@@ -5,7 +5,13 @@ C code to send messages to upstream servers
 
 Install Dependancy:
 
-For Ubuntu: sudo apt-get install  libpopt-dev
+For Ubuntu: 
+
+sudo apt-get install  libpopt-dev
+
+sudo apt-get install openssl
+
+sudo pip install pyDes
 
 make clean
 
@@ -15,7 +21,7 @@ make all
 
 cd test
 
-python server.py
+python server.py &
 
 cd ..
 

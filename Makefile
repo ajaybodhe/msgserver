@@ -4,12 +4,12 @@ CFLAGS=-I$(IDIR)
 
 ODIR=./obj
 
-LIBS=-lpopt
+LIBS=-lpopt -lcrypto
 
-_DEPS = sendmessage/sendmessage.h commandline/commandline.h
+_DEPS = sendmessage/sendmessage.h commandline/commandline.h utils/utils.h tripledes/tripledes.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = sendmessage.o commandline.o utils.o
+_OBJ = sendmessage.o commandline.o utils.o tripledes.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 all: subdirs sendmsg 
