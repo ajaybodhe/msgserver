@@ -32,4 +32,4 @@ subdirs:$(SUBDIRS)
 .PHONY: clean
 
 clean:
-	rm -f $(OBJ)
+	rm -fr $(ODIR)
