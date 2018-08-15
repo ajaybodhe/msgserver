@@ -24,7 +24,7 @@ dirs:=$(filter-out $(exclude_dirs),$(dirs))
 SUBDIRS := $(dirs)
 
 subdirs:$(SUBDIRS)
-	mkdir $ODIR
+	mkdir $(ODIR)
 	for dir in $(SUBDIRS);\
 	do cd $$dir && make && cd ../;\
 	done
