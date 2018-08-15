@@ -16,7 +16,7 @@ $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 commandline: $(OBJ)
-	$(CC) -c -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -c -o $@ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
