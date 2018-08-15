@@ -14,7 +14,7 @@ $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c $< -o $@ $(CFLAGS)
 
 utils: $(OBJ)
-	$(CC) -c -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -c -o $@ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
